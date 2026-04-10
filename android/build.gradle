@@ -2,14 +2,14 @@ group 'id.mncinnovation.mnc_identifier_ocr'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.6.10'
+    ext.kotlin_version = '2.3.10'
     repositories {
         google()
         mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.1.3'
+        classpath 'com.android.tools.build:gradle:8.9.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
@@ -27,7 +27,8 @@ apply plugin: 'kotlin-android'
 
 android {
     namespace = "id.mncinnovation.mnc_identifier_ocr"
-    compileSdkVersion 31
+    compileSdkVersion 36
+    
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -44,6 +45,14 @@ android {
 
     defaultConfig {
         minSdkVersion 21
+         ndk {
+            abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86_64'
+        }
+    }
+    packagingOptions {
+        jniLibs {
+            useLegacyPackaging = true
+        }
     }
 }
 
