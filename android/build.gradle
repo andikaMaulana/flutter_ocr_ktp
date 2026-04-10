@@ -59,16 +59,6 @@ android {
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.google.code.gson:gson:2.8.9'
-    implementation ("com.github.andikaMaulana:flutter_ocr_ktp_sdk:v1.1.0") {
-        artifact {
-            name = 'ocr'
-            type = 'aar'
-        }
-    }
-    implementation ("com.github.andikaMaulana:flutter_ocr_ktp_sdk:v1.1.0") {
-        artifact {
-            name = 'core'
-            type = 'aar'
-        }
-    }
+    implementation 'com.github.andikaMaulana:flutter_ocr_ktp_sdk:ocr:v1.1.0'
+    implementation 'com.github.andikaMaulana:flutter_ocr_ktp_sdk:core:v1.1.0'
 }
